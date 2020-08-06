@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopPCBusinessLogic", "Shop
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopPCListImplement", "ShopPCListImplement\ShopPCListImplement.csproj", "{3A88743E-5014-4614-A5DA-3C34ED67B036}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopPCFileImplement", "ShopPCFileImplement\ShopPCFileImplement.csproj", "{B2E361BC-B46E-4DEE-9489-5795216B9C42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3A88743E-5014-4614-A5DA-3C34ED67B036}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A88743E-5014-4614-A5DA-3C34ED67B036}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A88743E-5014-4614-A5DA-3C34ED67B036}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2E361BC-B46E-4DEE-9489-5795216B9C42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2E361BC-B46E-4DEE-9489-5795216B9C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2E361BC-B46E-4DEE-9489-5795216B9C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2E361BC-B46E-4DEE-9489-5795216B9C42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
