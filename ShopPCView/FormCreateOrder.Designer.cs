@@ -46,7 +46,6 @@
             this.comboBoxProduct.Name = "comboBoxProduct";
             this.comboBoxProduct.Size = new System.Drawing.Size(240, 21);
             this.comboBoxProduct.TabIndex = 14;
-            this.comboBoxProduct.Click += new System.EventHandler(this.ComboBoxProduct_SelectedIndexChanged);
             // 
             // buttonCancel
             // 
@@ -73,7 +72,7 @@
             // labelProduct
             // 
             this.labelProduct.AutoSize = true;
-            this.labelProduct.Location = new System.Drawing.Point(11, 21);
+            this.labelProduct.Location = new System.Drawing.Point(6, 21);
             this.labelProduct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelProduct.Name = "labelProduct";
             this.labelProduct.Size = new System.Drawing.Size(92, 13);

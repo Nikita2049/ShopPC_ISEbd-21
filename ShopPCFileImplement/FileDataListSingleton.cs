@@ -12,10 +12,10 @@ namespace ShopPCFileImplement
     public class FileDataListSingleton
     {
         private static FileDataListSingleton instance;
-        private readonly string ComponentFileName = "C:\\Users\\nikit\\source\\TP\\ShopPC\\Component.xml";
-        private readonly string OrderFileName = "C:\\Users\\nikit\\source\\TP\\ShopPC\\Order.xml";
-        private readonly string ProductFileName = "C:\\Users\\nikit\\source\\TP\\ShopPC\\Product.xml";
-        private readonly string ProductComponentFileName = "C:\\Users\\nikit\\source\\TP\\ShopPC\\ProductComponent.xml";
+        private readonly string ComponentFileName = "C:\\Users\\nikit\\source\\TP\\Component.xml";
+        private readonly string OrderFileName = "C:\\Users\\nikit\\source\\TP\\Order.xml";
+        private readonly string ProductFileName = "C:\\Users\\nikit\\source\\TP\\Product.xml";
+        private readonly string ProductComponentFileName = "C:\\Users\\nikit\\source\\TP\\ProductComponent.xml";
         public List<Component> Components { get; set; }
         public List<Order> Orders { get; set; }
         public List<Product> Products { get; set; }

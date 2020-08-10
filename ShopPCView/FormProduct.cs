@@ -26,7 +26,7 @@ namespace ShopPCView
             InitializeComponent();
             this.logic = service;
         }
-        private void FormProduct_Load(object sender, EventArgs e)
+        private void FormSnack_Load(object sender, EventArgs e)
         {
             if (id.HasValue)
             {
@@ -155,7 +155,7 @@ namespace ShopPCView
                     Price = Convert.ToDecimal(textBoxPrice.Text),
                     ProductComponents = productComponents
                 });
-                MessageBox.Show("Сохранение прошло уcпешно", "Сообщение",
+                MessageBox.Show("Сохранение прошло успешно", "Сообщение",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;
                 Close();

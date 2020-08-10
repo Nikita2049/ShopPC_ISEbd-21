@@ -48,6 +48,7 @@ namespace ShopPCListImplement.Implements
         }
         public void Delete(ProductBindingModel model)
         {
+            // удаляем записи по компонентам при удалении изделия
             for (int i = 0; i < source.ProductComponents.Count; ++i)
             {
                 if (source.ProductComponents[i].ProductId == model.Id)
@@ -69,6 +70,7 @@ namespace ShopPCListImplement.Implements
         {
             product.ProductName = model.ProductName;
             product.Price = model.Price;
+            //обновляем существуюущие компоненты и ищем максимальный идентификатор
             int maxSFId = 0;
             for (int i = 0; i < source.ProductComponents.Count; ++i)
             {
@@ -78,11 +80,14 @@ namespace ShopPCListImplement.Implements
                 }
                 if (source.ProductComponents[i].ProductId == product.Id)
                 {
+                    // если в модели пришла запись компонента с таким id
                     if
                     (model.ProductComponents.ContainsKey(source.ProductComponents[i].ComponentId))
                     {
+                        // обновляем количество
                         source.ProductComponents[i].Count =
                         model.ProductComponents[source.ProductComponents[i].ComponentId].Item2;
+                        // из модели убираем эту запись, чтобы остались только непросмотренные
                         model.ProductComponents.Remove(source.ProductComponents[i].ComponentId);
                     }
                     else
@@ -91,6 +96,7 @@ namespace ShopPCListImplement.Implements
                     }
                 }
             }
+            // новые записи
             foreach (var sf in model.ProductComponents)
             {
                 source.ProductComponents.Add(new ProductComponent
@@ -123,6 +129,7 @@ namespace ShopPCListImplement.Implements
         }
         private ProductViewModel CreateViewModel(Product Product)
         {
+            // требуется дополнительно получить список компонентов для изделия с названиями и их количество
             Dictionary<int, (string, int)> ProductComponents = new Dictionary<int, (string, int)>();
             foreach (var sf in source.ProductComponents)
             {
