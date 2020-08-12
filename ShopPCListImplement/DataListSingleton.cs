@@ -12,12 +12,14 @@ namespace ShopPCListImplement
         public List<Order> Orders { get; set; }
         public List<Product> Products { get; set; }
         public List<ProductComponent> ProductComponents { get; set; }
+        public List<Client> Clients { get; set; }
         private DataListSingleton()
         {
             Components = new List<Component>();
             Orders = new List<Order>();
             Products = new List<Product>();
             ProductComponents = new List<ProductComponent>();
+            Clients = new List<Client>();
         }
         public static DataListSingleton GetInstance()
         {
