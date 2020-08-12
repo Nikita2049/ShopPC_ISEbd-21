@@ -26,7 +26,7 @@ namespace ShopPCView
             InitializeComponent();
             this.logic = service;
         }
-        private void FormSnack_Load(object sender, EventArgs e)
+        private void FormProduct_Load(object sender, EventArgs e)
         {
             if (id.HasValue)
             {

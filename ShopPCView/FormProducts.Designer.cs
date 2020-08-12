@@ -106,7 +106,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormProducts";
             this.Text = "Системные блоки";
-            this.Load += new System.EventHandler(this.FormSnacks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
