@@ -1,13 +1,11 @@
 ﻿using ShopPCBusinessLogic.BindingModels;
 using ShopPCBusinessLogic.Interfaces;
+using ShopPCBusinessLogic.ViewModels;
+using ShopPCFileImplement.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
-using ShopPCBusinessLogic.ViewModels;
-using ShopPCFileImplement;
-using ShopPCFileImplement.Models;
-using System.Xml.Linq;
+using System.Text;
 
 namespace ShopPCFileImplement.Implements
 {
@@ -59,7 +57,7 @@ namespace ShopPCFileImplement.Implements
         public List<OrderViewModel> Read(OrderBindingModel model)
         {
             return source.Orders
-            .Where(rec => model == null || rec.Id == model.Id)
+            .Where(rec => model == null || rec.Id == model.Id || (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo))
             .Select(rec => new OrderViewModel
             {
                 Id = rec.Id,
@@ -76,8 +74,8 @@ namespace ShopPCFileImplement.Implements
         private string GetProductName(int id)
         {
             string name = "";
-            var product = source.Products.FirstOrDefault(x => x.Id == id);
-            name = product != null ? product.ProductName : "";
+            var Product = source.Products.FirstOrDefault(x => x.Id == id);
+            name = Product != null ? Product.ProductName : "";
             return name;
         }
     }

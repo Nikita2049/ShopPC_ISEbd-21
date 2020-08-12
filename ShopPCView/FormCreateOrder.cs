@@ -49,9 +49,9 @@ namespace ShopPCView
                 try
                 {
                     int id = Convert.ToInt32(comboBoxProduct.SelectedValue);
-                    ProductViewModel Snack = logicS.Read(new ProductBindingModel { Id = id })?[0];
+                    ProductViewModel Product = logicS.Read(new ProductBindingModel { Id = id })?[0];
                     int count = Convert.ToInt32(textBoxCount.Text);
-                    textBoxSum.Text = (count * Snack?.Price ?? 0).ToString();
+                    textBoxSum.Text = (count * Product?.Price ?? 0).ToString();
                 }
                 catch (Exception ex)
                 {
