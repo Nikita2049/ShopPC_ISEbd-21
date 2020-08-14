@@ -104,7 +104,7 @@ namespace ShopPCView
         {
             LoadData();
         }
-        private void списокПродуктовToolStripMenuItem_Click(object sender, EventArgs e)
+        private void списокКомпонентовToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var dialog = new SaveFileDialog { Filter = "docx|*.docx" })
             {
@@ -125,7 +125,7 @@ namespace ShopPCView
             var form = Container.Resolve<FormReportOrders>();
             form.ShowDialog();
         }
-        private void закускиПоПродуктамToolStripMenuItem_Click(object sender, EventArgs e)
+        private void системблокПоКомпонентамToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = Container.Resolve<FormReportProductComponents>();
             form.ShowDialog();
@@ -134,6 +134,12 @@ namespace ShopPCView
         {
             var form = Container.Resolve<FormClients>();
             form.ShowDialog();
+        }
+        private void сообщенияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormMessages>();
+            form.ShowDialog();
+
         }
     }
 }
