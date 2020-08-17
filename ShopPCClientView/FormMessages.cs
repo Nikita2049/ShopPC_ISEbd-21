@@ -1,26 +1,18 @@
-﻿using ShopPCBusinessLogic.Interfaces;
+﻿using ShopPCBusinessLogic.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Unity;
 
-namespace ShopPCView
+namespace ShopPCClientView
 {
     public partial class FormMessages : Form
     {
-        [Dependency]
-        public new IUnityContainer Container { get; set; }
-        private readonly IMessageInfoLogic logic;
-        public FormMessages(IMessageInfoLogic logic)
+        public FormMessages()
         {
-            this.logic = logic;
-
             InitializeComponent();
         }
         private void FormMessages_Load(object sender, EventArgs e)
@@ -31,7 +23,14 @@ namespace ShopPCView
         {
             try
             {
-                Program.ConfigGrid(logic.Read(null), dataGridView);
+                var list = APIClient.GetRequest<List<MessageInfoViewModel>>($"api/client/getmessages?clientId={Program.Client.Id}");
+
+                if (list != null)
+                {
+                    dataGridView.DataSource = list;
+                    dataGridView.Columns[0].Visible = false;
+                    dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
             }
             catch (Exception ex)
             {

@@ -1,14 +1,19 @@
-﻿using System;
+﻿using ShopPCBusinessLogic.Attributes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
 namespace ShopPCBusinessLogic.ViewModels
 {
-    public class ComponentViewModel
+    public class ComponentViewModel : BaseViewModel
     {
-        public int Id { get; set; }
-        [DisplayName("Название компонента")]
+        [Column(title: "Коипонент", gridViewAutoSize: GridViewAutoSize.Fill)]
         public string ComponentName { get; set; }
+        public override List<string> Properties() => new List<string>
+        {
+            "Id",
+            "ComponentName"
+        };
     }
 }
