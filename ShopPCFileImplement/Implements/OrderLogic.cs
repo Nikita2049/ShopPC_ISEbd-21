@@ -63,7 +63,7 @@ namespace ShopPCFileImplement.Implements
             .Select(rec => new OrderViewModel
             {
                 Id = rec.Id,
-                ProductName = GetSnackName(rec.ProductId),
+                ProductName = GetProductName(rec.ProductId),
                 ClientId = rec.ClientId,
                 ClientFIO = source.Clients.FirstOrDefault(recC => recC.Id == rec.ClientId)?.ClientFIO,
                 Count = rec.Count,
@@ -74,7 +74,7 @@ namespace ShopPCFileImplement.Implements
             })
             .ToList();
         }
-        private string GetSnackName(int id)
+        private string GetProductName(int id)
         {
             string name = "";
             var Product = source.Products.FirstOrDefault(x => x.Id == id);

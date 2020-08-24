@@ -93,7 +93,7 @@ namespace ShopPCBusinessLogic.BusinessLogics
             SaveToPdf.CreateDoc(new PdfInfo
             {
                 FileName = model.FileName,
-                Title = "Список системных блоков по компонентам",
+                Title = "Список системных блоков по компонентами",
                 ProductComponents = GetProductComponent(),
             });
         }

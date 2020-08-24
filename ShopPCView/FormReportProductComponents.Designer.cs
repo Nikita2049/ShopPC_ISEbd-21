@@ -54,7 +54,7 @@
             // 
             // reportViewer
             // 
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "Diner.Report.rdlc";
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "ShopPC.Report.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(13, 32);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;

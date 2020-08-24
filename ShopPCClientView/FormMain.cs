@@ -7,7 +7,6 @@ using System.Text;
 using System.Windows.Forms;
 using ShopPCBusinessLogic.ViewModels;
 
-
 namespace ShopPCClientView
 {
     public partial class FormMain : Form
