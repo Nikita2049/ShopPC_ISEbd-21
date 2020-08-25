@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ShopPCRestApi.Controllers
-{
+{ 
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class ClientController : ControllerBase
