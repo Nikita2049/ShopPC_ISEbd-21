@@ -40,10 +40,10 @@ namespace ShopPCClientView
                 try
                 {
                     int id = Convert.ToInt32(comboBoxProduct.SelectedValue);
-                    ProductViewModel Snack =
-APIClient.GetRequest<ProductViewModel>($"api/main/getProduct?SnackId={id}");
+                    ProductViewModel Product =
+APIClient.GetRequest<ProductViewModel>($"api/main/getProduct?ProductId={id}");
                     int count = Convert.ToInt32(textBoxCount.Text);
-                    textBoxSum.Text = (count * Snack.Price).ToString();
+                    textBoxSum.Text = (count * Product.Price).ToString();
                 }
                 catch (Exception ex)
                 {
