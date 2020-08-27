@@ -24,7 +24,7 @@ namespace ShopPCDatabaseImplement.Implements
                        rec.ProductName == model.ProductName && rec.Id != model.Id);
                         if (element != null)
                         {
-                            throw new Exception("Уже есть изделие с таким названием");
+                            throw new Exception("Уже есть системный блок с таким названием");
                         }
                         if (model.Id.HasValue)
                         {

@@ -318,7 +318,7 @@
       <Name>ShopPCBusinessLogic</Name>
     </ProjectReference>
     <ProjectReference Include="..\ShopPCDatabaseImplement\ShopPCDatabaseImplement.csproj">
-      <Project>{72af90b6-bfdd-4930-8c45-66f995d19608}</Project>
+      <Project>{2ecf2cbc-db21-4ca5-9f78-6384c29f44b7}</Project>
       <Name>ShopPCDatabaseImplement</Name>
     </ProjectReference>
     <ProjectReference Include="..\ShopPCFileImplement\ShopPCFileImplement.csproj">

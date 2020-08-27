@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using ShopPCBusinessLogic.BindingModels;
 using ShopPCBusinessLogic.Interfaces;
 using ShopPCBusinessLogic.ViewModels;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ShopPCRestApi.Controllers
@@ -15,16 +14,16 @@ namespace ShopPCRestApi.Controllers
     public class ClientController : ControllerBase
     {
         private readonly IClientLogic _logic;
+
         public ClientController(IClientLogic logic)
         {
             _logic = logic;
         }
+
         [HttpGet]
         public ClientViewModel Login(string login, string password) => _logic.Read(new ClientBindingModel
-        {
-            Email = login,
-            Password = password
-        })?[0];
+        { Email = login, Password = password }).First();
+
         [HttpPost]
         public void Register(ClientBindingModel model) => _logic.CreateOrUpdate(model);
         [HttpPost]
