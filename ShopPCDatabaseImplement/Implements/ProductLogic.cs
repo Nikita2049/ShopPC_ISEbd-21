@@ -90,7 +90,7 @@ namespace ShopPCDatabaseImplement.Implements
                 {
                     try
                     {
-                        // удаяем записи по продуктам при удалении закуски
+                        // удаяем записи по компонентам при удалении системных блоков
                         context.ProductComponents.RemoveRange(context.ProductComponents.Where(rec =>
                         rec.ProductId == model.Id));
                         Product element = context.Products.FirstOrDefault(rec => rec.Id

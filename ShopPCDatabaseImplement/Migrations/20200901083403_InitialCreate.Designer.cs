@@ -10,7 +10,7 @@ using ShopPCDatabaseImplement;
 namespace ShopPCDatabaseImplement.Migrations
 {
     [DbContext(typeof(ShopPCDatabase))]
-    [Migration("20200827110636_InitialCreate")]
+    [Migration("20200901083403_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
