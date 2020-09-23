@@ -152,7 +152,8 @@ namespace ShopPCBusinessLogic
             {
                 MailAddress = clientLogic.Read(new ClientBindingModel
                 {
-                    Id = order.ClientId
+                    Id =
+order.ClientId
                 })?[0]?.Email,
                 Subject = $"Заказ №{order.Id}",
                 Text = $"Заказ №{order.Id} оплачен."
