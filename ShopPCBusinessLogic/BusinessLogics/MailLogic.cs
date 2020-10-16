@@ -1,6 +1,4 @@
-﻿using ShopPCBusinessLogic.BindingModels;
-using ShopPCBusinessLogic.HelperModels;
-using MailKit.Net.Pop3;
+﻿using MailKit.Net.Pop3;
 using MailKit.Security;
 using System;
 using System.Collections.Generic;
@@ -8,6 +6,8 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using ShopPCBusinessLogic.BindingModels;
+using ShopPCBusinessLogic.HelperModels;
 
 namespace ShopPCBusinessLogic.BusinessLogics
 {
