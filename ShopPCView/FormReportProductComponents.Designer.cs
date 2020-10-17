@@ -30,6 +30,7 @@
         {
             this.buttonMake = new System.Windows.Forms.Button();
             this.buttonToPdf = new System.Windows.Forms.Button();
+            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
             // buttonMake
@@ -54,7 +55,7 @@
             // 
             // reportViewer
             // 
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "Diner.Report.rdlc";
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "ShopPC.Report.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(13, 32);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
@@ -66,6 +67,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 347);
+            this.Controls.Add(this.reportViewer);
             this.Controls.Add(this.buttonToPdf);
             this.Controls.Add(this.buttonMake);
             this.Name = "FormReportProductComponents";

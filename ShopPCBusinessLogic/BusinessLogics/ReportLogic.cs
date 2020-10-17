@@ -72,7 +72,7 @@ namespace ShopPCBusinessLogic.BusinessLogics
             });
         }
         /// <summary>
-        /// Сохранение системных блоков с указаеним продуктов в файл-Excel
+        /// Сохранение системных блоков с указаеним компонентов в файл-Excel
         /// </summary>
         /// <param name="model"></param>
         public void SaveOrdersToExcelFile(ReportBindingModel model)
@@ -85,7 +85,7 @@ namespace ShopPCBusinessLogic.BusinessLogics
             });
         }
         /// <summary>
-        /// Сохранение системных блоков с продуктами в файл-Pdf
+        /// Сохранение системных блоков с компонентами в файл-Pdf
         /// </summary>
         /// <param name="model"></param>
         public void SaveProductsToPdfFile(ReportBindingModel model)
@@ -93,7 +93,7 @@ namespace ShopPCBusinessLogic.BusinessLogics
             SaveToPdf.CreateDoc(new PdfInfo
             {
                 FileName = model.FileName,
-                Title = "Список системных блоков по компонентам",
+                Title = "Список системных блоков по компонентами",
                 ProductComponents = GetProductComponent(),
             });
         }

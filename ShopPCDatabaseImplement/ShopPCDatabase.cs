@@ -10,7 +10,7 @@ namespace ShopPCDatabaseImplement
         {
             if (optionsBuilder.IsConfigured == false)
             {
-                optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-7825FI3\SQLEXPRESS;Initial Catalog=ShopPCDatabase;Integrated Security=True;MultipleActiveResultSets=True;");
+                optionsBuilder.UseSqlServer(@"Data Source=(local)\SQLEXPRESS;Initial Catalog=ShopPCDatabase;Integrated Security=True;MultipleActiveResultSets=True;");
             }
             base.OnConfiguring(optionsBuilder);
         }
@@ -18,5 +18,6 @@ namespace ShopPCDatabaseImplement
         public virtual DbSet<Product> Products { set; get; }
         public virtual DbSet<ProductComponent> ProductComponents { set; get; }
         public virtual DbSet<Order> Orders { set; get; }
+        public virtual DbSet<Client> Clients { set; get; }
     }
 }

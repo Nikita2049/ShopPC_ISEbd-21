@@ -23,7 +23,7 @@ namespace ShopPCView
             InitializeComponent();
             this.logic = logic;
         }
-        private void FormSnacks_Load(object sender, EventArgs e)
+        private void FormProducts_Load(object sender, EventArgs e)
         {
             LoadData();
         }

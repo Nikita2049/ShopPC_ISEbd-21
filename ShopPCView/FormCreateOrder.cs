@@ -20,11 +20,13 @@ namespace ShopPCView
         [Dependency]
         public new IUnityContainer Container { get; set; }
         private readonly IProductLogic logicS;
+        private readonly IClientLogic logicC;
         private readonly MainLogic logicM;
-        public FormCreateOrder(IProductLogic logicS, MainLogic logicM)
+        public FormCreateOrder(IProductLogic logicS, IClientLogic logicC, MainLogic logicM)
         {
             InitializeComponent();
             this.logicS = logicS;
+            this.logicC = logicC;
             this.logicM = logicM;
         }
         private void FormCreateOrder_Load(object sender, EventArgs e)
@@ -35,6 +37,11 @@ namespace ShopPCView
                 comboBoxProduct.DataSource = list;
                 comboBoxProduct.DisplayMember = "ProductName";
                 comboBoxProduct.ValueMember = "Id";
+                var listC = logicC.Read(null);
+                comboBoxClient.DisplayMember = "ClientFIO";
+                comboBoxClient.ValueMember = "Id";
+                comboBoxClient.DataSource = listC;
+                comboBoxClient.SelectedItem = null;
             }
             catch (Exception ex)
             {
@@ -87,6 +94,7 @@ namespace ShopPCView
                 logicM.CreateOrder(new CreateOrderBindingModel
                 {
                     ProductId = Convert.ToInt32(comboBoxProduct.SelectedValue),
+                    ClientId = Convert.ToInt32(comboBoxClient.SelectedValue),
                     Count = Convert.ToInt32(textBoxCount.Text),
                     Sum = Convert.ToDecimal(textBoxSum.Text)
                 });
