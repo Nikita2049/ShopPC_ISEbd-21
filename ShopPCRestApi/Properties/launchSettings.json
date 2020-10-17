@@ -20,7 +20,6 @@
     "ShopPCRestApi": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/main/getproductlist",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

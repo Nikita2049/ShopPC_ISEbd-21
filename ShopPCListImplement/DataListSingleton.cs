@@ -13,6 +13,7 @@ namespace ShopPCListImplement
         public List<Product> Products { get; set; }
         public List<ProductComponent> ProductComponents { get; set; }
         public List<Client> Clients { get; set; }
+        public List<Implementer> Implementers { get; set; }
         private DataListSingleton()
         {
             Components = new List<Component>();
@@ -20,6 +21,7 @@ namespace ShopPCListImplement
             Products = new List<Product>();
             ProductComponents = new List<ProductComponent>();
             Clients = new List<Client>();
+            Implementers = new List<Implementer>();
         }
         public static DataListSingleton GetInstance()
         {

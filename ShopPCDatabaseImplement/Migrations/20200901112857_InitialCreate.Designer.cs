@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopPCDatabaseImplement;
 
 namespace ShopPCDatabaseImplement.Migrations
 {
     [DbContext(typeof(ShopPCDatabase))]
-    partial class ShopPCDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20200901112857_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -115,6 +117,8 @@ namespace ShopPCDatabaseImplement.Migrations
 
                     b.HasIndex("ClientId");
 
+                    b.HasIndex("ImplementerId");
+
                     b.HasIndex("ProductId");
 
                     b.ToTable("Orders");
@@ -171,6 +175,10 @@ namespace ShopPCDatabaseImplement.Migrations
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("ShopPCDatabaseImplement.Models.Implementer", "Implementer")
+                        .WithMany("Orders")
+                        .HasForeignKey("ImplementerId");
 
                     b.HasOne("ShopPCDatabaseImplement.Models.Product", "Product")
                         .WithMany("Orders")

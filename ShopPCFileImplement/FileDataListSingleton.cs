@@ -17,11 +17,13 @@ namespace ShopPCFileImplement
         private readonly string ProductFileName = "Product.xml";
         private readonly string ProductComponentFileName = "ProductComponent.xml";
         private readonly string ClientFileName = "Client.xml";
+
         public List<Component> Components { get; set; }
         public List<Order> Orders { get; set; }
         public List<Product> Products { get; set; }
         public List<ProductComponent> ProductComponents { get; set; }
         public List<Client> Clients { get; set; }
+
         private FileDataListSingleton()
         {
             Components = LoadComponents();
@@ -29,7 +31,6 @@ namespace ShopPCFileImplement
             Products = LoadProducts();
             ProductComponents = LoadProductComponents();
             Clients = LoadClients();
-
         }
         public static FileDataListSingleton GetInstance()
         {
@@ -46,6 +47,7 @@ namespace ShopPCFileImplement
             SaveProducts();
             SaveProductComponents();
             SaveClients();
+
         }
         private List<Client> LoadClients()
         {
