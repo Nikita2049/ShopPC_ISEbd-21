@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShopPCDatabaseImplement;
 
 namespace ShopPCDatabaseImplement.Migrations
 {
     [DbContext(typeof(ShopPCDatabase))]
-    partial class ShopPCDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20200901112857_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -164,13 +166,6 @@ namespace ShopPCDatabaseImplement.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductComponents");
-                });
-
-            modelBuilder.Entity("ShopPCDatabaseImplement.Models.MessageInfo", b =>
-                {
-                    b.HasOne("ShopPCDatabaseImplement.Models.Client", "Client")
-                        .WithMany("MessageInfoes")
-                        .HasForeignKey("ClientId");
                 });
 
             modelBuilder.Entity("ShopPCDatabaseImplement.Models.Order", b =>
