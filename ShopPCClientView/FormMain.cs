@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using ShopPCBusinessLogic.ViewModels;
 
+
 namespace ShopPCClientView
 {
     public partial class FormMain : Form
@@ -50,6 +51,11 @@ namespace ShopPCClientView
         private void RefreshOrderListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadList();
+        }
+        private void сообщенияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new FormMessages();
+            form.ShowDialog();
         }
     }
 }
