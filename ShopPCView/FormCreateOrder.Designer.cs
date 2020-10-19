@@ -75,17 +75,17 @@
             // labelProduct
             // 
             this.labelProduct.AutoSize = true;
-            this.labelProduct.Location = new System.Drawing.Point(10, 29);
+            this.labelProduct.Location = new System.Drawing.Point(4, 26);
             this.labelProduct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelProduct.Name = "labelProduct";
-            this.labelProduct.Size = new System.Drawing.Size(92, 13);
+            this.labelProduct.Size = new System.Drawing.Size(98, 13);
             this.labelProduct.TabIndex = 10;
-            this.labelProduct.Text = "Системный блок";
+            this.labelProduct.Text = "Системные блоки";
             // 
             // labelSum
             // 
             this.labelSum.AutoSize = true;
-            this.labelSum.Location = new System.Drawing.Point(36, 108);
+            this.labelSum.Location = new System.Drawing.Point(4, 108);
             this.labelSum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSum.Name = "labelSum";
             this.labelSum.Size = new System.Drawing.Size(41, 13);
@@ -113,7 +113,7 @@
             // labelCount
             // 
             this.labelCount.AutoSize = true;
-            this.labelCount.Location = new System.Drawing.Point(36, 80);
+            this.labelCount.Location = new System.Drawing.Point(4, 83);
             this.labelCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCount.Name = "labelCount";
             this.labelCount.Size = new System.Drawing.Size(66, 13);
@@ -123,7 +123,7 @@
             // labelClient
             // 
             this.labelClient.AutoSize = true;
-            this.labelClient.Location = new System.Drawing.Point(36, 54);
+            this.labelClient.Location = new System.Drawing.Point(4, 54);
             this.labelClient.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelClient.Name = "labelClient";
             this.labelClient.Size = new System.Drawing.Size(43, 13);

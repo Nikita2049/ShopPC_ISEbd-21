@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using ShopPCBusinessLogic.BindingModels;
 using ShopPCBusinessLogic.Interfaces;
 using ShopPCBusinessLogic.ViewModels;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ShopPCRestApi.Controllers
@@ -20,6 +19,8 @@ namespace ShopPCRestApi.Controllers
         private readonly int _passwordMaxLength = 50;
         private readonly int _passwordMinLength = 10;
         public ClientController(IClientLogic logic, IMessageInfoLogic messageLogic)
+
+        public ClientController(IClientLogic logic)
         {
             this._logic = logic;
             this._messageLogic = messageLogic;
@@ -33,6 +34,8 @@ namespace ShopPCRestApi.Controllers
         })?[0];
         [HttpGet]
         public List<MessageInfoViewModel> GetMessages(int clientId) => _messageLogic.Read(new MessageInfoBindingModel { ClientId = clientId });
+        { Email = login, Password = password }).First();
+        
         [HttpPost]
         public void Register(ClientBindingModel model)
         {

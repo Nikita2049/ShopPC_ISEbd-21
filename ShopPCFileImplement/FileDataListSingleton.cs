@@ -19,6 +19,7 @@ namespace ShopPCFileImplement
         private readonly string ClientFileName = "Client.xml";
         private readonly string ImplementerFileName = "Implementer.xml";
         private readonly string MessageInfoFileName = "MessageInfo.xml";
+      
         public List<Component> Components { get; set; }
         public List<Order> Orders { get; set; }
         public List<Product> Products { get; set; }
@@ -26,6 +27,7 @@ namespace ShopPCFileImplement
         public List<Client> Clients { get; set; }
         public List<Implementer> Implementers { get; set; }
         public List<MessageInfo> MessageInfoes { get; set; }
+      
         private FileDataListSingleton()
         {
             Components = LoadComponents();
@@ -83,19 +85,6 @@ namespace ShopPCFileImplement
             {
                 XDocument xDocument = XDocument.Load(ImplementerFileName);
                 var xElements = xDocument.Root.Elements("Implementer").ToList();
-
-                foreach (var elem in xElements)
-                {
-                    list.Add(new Implementer
-                    {
-                        Id = Convert.ToInt32(elem.Attribute("Id").Value),
-                        ImplementerFIO = elem.Element("ImplementerFIO").Value,
-                        WorkingTime = Convert.ToInt32(elem.Element("WorkingTime").Value),
-                        PauseTime = Convert.ToInt32(elem.Element("PauseTime").Value)
-                    });
-                }
-            }
-            return list;
         }
         private List<Client> LoadClients()
         {

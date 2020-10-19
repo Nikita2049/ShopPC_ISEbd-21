@@ -24,7 +24,7 @@ namespace ShopPCDatabaseImplement.Implements
                        rec.ProductName == model.ProductName && rec.Id != model.Id);
                         if (element != null)
                         {
-                            throw new Exception("Уже есть изделие с таким названием");
+                            throw new Exception("Уже есть системный блок с таким названием");
                         }
                         if (model.Id.HasValue)
                         {
@@ -90,7 +90,7 @@ namespace ShopPCDatabaseImplement.Implements
                 {
                     try
                     {
-                        // удаяем записи по продуктам при удалении закуски
+                        // удаяем записи по компонентам при удалении системных блоков
                         context.ProductComponents.RemoveRange(context.ProductComponents.Where(rec =>
                         rec.ProductId == model.Id));
                         Product element = context.Products.FirstOrDefault(rec => rec.Id
