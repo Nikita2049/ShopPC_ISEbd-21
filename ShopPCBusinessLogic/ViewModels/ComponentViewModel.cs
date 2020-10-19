@@ -8,7 +8,7 @@ namespace ShopPCBusinessLogic.ViewModels
     public class ComponentViewModel
     {
         public int Id { get; set; }
-        [DisplayName("Название продукта")]
+        [DisplayName("Название компонента")]
         public string ComponentName { get; set; }
     }
 }
